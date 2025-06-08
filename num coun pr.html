@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Random Number</title>
+</head>
+<body>
+    <h2>Random Number App</h2>
+    <p id="number">0</p>
+    <button onclick="toggle()">Start/Stop</button>
+    <script>
+        let running = false;
+        let timer;
+        function toggle() {
+            if (running) {
+                clearInterval(timer);
+                running = false;
+            } else {
+                timer = setInterval(function() {
+                    document.getElementById("number").innerText = Math.floor(Math.random() * 100) + 1;
+                }, 200);
+                running = true;
+            }
+        }
+    </script>
+</body>
+</html>
